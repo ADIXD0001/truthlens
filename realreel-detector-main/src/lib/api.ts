@@ -1,3 +1,5 @@
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+
 export interface DetectionResult {
   analysis_id: string;
   verdict: "ai-generated" | "real";
@@ -36,7 +38,7 @@ export async function runDetection(
       formData.append("url", input);
     }
 
-    const response = await fetch("http://localhost:5000/analyze", {
+    const response = await fetch(`${API_BASE_URL}/analyze`, {
       method: "POST",
       body: formData,
     });
@@ -61,7 +63,7 @@ export async function sendFeedback(analysisId: string, userVerdict: "ai-generate
   formData.append("analysis_id", analysisId);
   formData.append("user_verdict", userVerdict);
 
-  const response = await fetch("http://localhost:5000/feedback", {
+  const response = await fetch(`${API_BASE_URL}/feedback`, {
     method: "POST",
     body: formData,
   });

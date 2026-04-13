@@ -1,0 +1,17 @@
+# Environment
+.env
+__pycache__/
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Python/ML
+*.pth
+temp_uploads/
+
+# IDEs and OS
+.vscode/
+.DS_Store

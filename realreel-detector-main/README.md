@@ -1,3 +1,4 @@
-# Welcome to your Lovable project
+TruthLens
+In development
 
 TODO: Document your project here
